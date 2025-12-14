@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Life of Font – Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <div class="panel left">
+        <div class="rowCol">
+          <div class="rowLabel">Cell born:</div>
+          <div class="btnGrid" id="bornButtons"></div>
+        </div>
+
+        <div class="rowCol">
+          <div class="rowLabel">Cell alive:</div>
+          <div class="btnGrid" id="aliveButtons"></div>
+        </div>
+
+        <div class="row">
+          <label>Step gap:</label>
+          <select id="stepGap">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="1" selected>1</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label>Speed:</label>
+         <select id="speedMs">
+  <option value="30">30 ms</option>
+  <option value="50" selected>50 ms</option>
+  <option value="80">80 ms</option>
+  <option value="120">120 ms</option>
+  <option value="200">200 ms</option>
+</select>
+        </div>
+
+        <button id="playBtn">Play</button>
+        <button id="resetBtn">Reset</button>
+
+        <div class="stepReadout">
+          Step <span id="stepNum">0</span>
+        </div>
+
+        <div class="hint">
+          Keys: <b>Space</b> play/pause · <b>R</b> reset
+        </div>
+      </div>
+
+      <div class="panel right">
+        <div class="previewFrame">
+          <canvas id="canvas"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
