@@ -1,66 +1,83 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Life of Font – Demo</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-    <div class="app">
-      <div class="panel left">
-        <div class="rowCol">
-          <div class="rowLabel">Cell born:</div>
-          <div class="btnGrid" id="bornButtons"></div>
-        </div>
-
-        <div class="rowCol">
-          <div class="rowLabel">Cell alive:</div>
-          <div class="btnGrid" id="aliveButtons"></div>
-        </div>
-
-        <div class="row">
-          <label>Step gap:</label>
-          <select id="stepGap">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="1" selected>1</option>
-            <option value="4">4</option>
-            <option value="6">6</option>
-          </select>
-        </div>
-
-        <div class="row">
-          <label>Speed:</label>
-         <select id="speedMs">
-  <option value="30">30 ms</option>
-  <option value="50" selected>50 ms</option>
-  <option value="80">80 ms</option>
-  <option value="120">120 ms</option>
-  <option value="200">200 ms</option>
-</select>
-        </div>
-
-        <button id="playBtn">Play</button>
-        <button id="resetBtn">Reset</button>
-
-        <div class="stepReadout">
-          Step <span id="stepNum">0</span>
-        </div>
-
-        <div class="hint">
-          Keys: <b>Space</b> play/pause · <b>R</b> reset
-        </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CA Font Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="panel left">
+      <div class="row">
+        <label>Font:</label>
+        <select id="fontSelect"></select>
       </div>
 
-      <div class="panel right">
-        <div class="previewFrame">
-          <canvas id="canvas"></canvas>
-        </div>
+      <div class="row">
+        <label>Text:</label>
+        <input id="textInput" type="text" value="M" maxlength="32" />
+      </div>
+
+      <div class="row">
+        <label>Pixel size:</label>
+        <input id="cellSize" type="range" min="2" max="20" value="6" />
+        <span id="cellSizeVal">6</span>
+      </div>
+
+      <hr />
+
+      <div class="row">
+        <label>Step Gap:</label>
+        <select id="stepGap">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3" selected>3</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Speed:</label>
+        <select id="speed">
+          <option value="15">15 fps</option>
+          <option value="30" selected>30 fps</option>
+          <option value="45">45 fps</option>
+          <option value="60">60 fps</option>
+        </select>
+      </div>
+
+      <hr />
+
+      <div class="groupTitle">Cell Born</div>
+      <div id="bornRow" class="toggleRow"></div>
+
+      <div class="groupTitle">Cell Alive</div>
+      <div id="aliveRow" class="toggleRow"></div>
+
+      <div class="hint">
+        (Rule: neighbors count uses 8-neighborhood)
+      </div>
+
+      <hr />
+
+      <div class="row buttons">
+        <button id="generateBtn">Generate</button>
+        <button id="playBtn">Play</button>
+        <button id="resetBtn">Reset</button>
       </div>
     </div>
 
-    <script src="main.js"></script>
-  </body>
+    <div class="panel right">
+      <div class="previewFrame">
+        <canvas id="canvas"></canvas>
+        <div class="stepReadout">Step <span id="stepNum">0</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
 </html>

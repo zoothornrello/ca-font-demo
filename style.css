@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f3f3f3;
+  background: #111;
 }
 
 .app {
@@ -10,51 +10,42 @@ body {
   margin: 40px auto;
   background: #fff;
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 300px 1fr;
   border: 1px solid #ddd;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
-.panel {
-  padding: 18px;
-}
-
-.left {
-  border-right: 1px solid #ddd;
-}
+.panel { padding: 18px; }
+.left { border-right: 1px solid #ddd; }
 
 .row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 12px;
   font-size: 12px;
 }
 
-label {
-  width: 80px;
-  color: #222;
-}
+label { width: 90px; color: #222; }
 
-select {
+input, select {
   font-size: 12px;
   padding: 4px 6px;
 }
 
-button {
-  width: 120px;
+.buttons button {
+  width: 90px;
   padding: 8px 10px;
   font-size: 12px;
   background: #111;
   color: #fff;
   border: none;
   cursor: pointer;
-  margin-right: 10px;
-  margin-bottom: 10px;
 }
 
-button:active {
-  transform: translateY(1px);
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 14px 0;
 }
 
 .right {
@@ -71,67 +62,53 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-#canvas {
-  image-rendering: pixelated;
-}
+#canvas { image-rendering: pixelated; }
 
 .stepReadout {
-  margin-top: 12px;
-  font-size: 28px;
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  font-size: 18px;
   font-weight: 700;
   color: #111;
 }
 
-.hint {
-  margin-top: 8px;
-  font-size: 11px;
-  color: #555;
-}
-
-/* Born/Alive button grids */
-.rowCol {
-  margin-bottom: 14px;
+.groupTitle {
   font-size: 12px;
+  font-weight: 700;
+  margin: 6px 0 6px;
 }
 
-.rowLabel {
-  margin-bottom: 6px;
-  color: #222;
-}
-
-.btnGrid {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
+.toggleRow {
+  display: flex;
+  flex-wrap: wrap;
   gap: 6px;
+  margin-bottom: 10px;
 }
 
-.btnCell {
-  padding: 6px 0;
-  font-size: 12px;
-  border: 1px solid #bbb;
+.toggle {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #aaa;
   background: #fff;
+  display: grid;
+  place-items: center;
   cursor: pointer;
   user-select: none;
+  font-size: 11px;
 }
 
-.btnCell.active {
+.toggle.on {
   background: #111;
   color: #fff;
   border-color: #111;
 }
-/* override global button styling for the 0–8 grid buttons */
-.btnCell {
-  width: auto !important;
-  margin: 0 !important;
-  padding: 6px 0 !important;
-  background: #fff !important;
-  color: #111 !important;
-}
 
-.btnGrid {
-  grid-template-columns: repeat(9, 24px);
-  justify-content: start;
-  width: fit-content;
+.hint {
+  font-size: 11px;
+  color: #444;
+  margin-top: 4px;
 }
